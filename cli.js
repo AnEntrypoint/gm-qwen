@@ -14,7 +14,7 @@ console.log(isUpgrade ? 'Upgrading gm-qwen...' : 'Installing gm-qwen...');
 try {
   fs.mkdirSync(destDir, { recursive: true });
 
-  const filesToCopy = [["agents","agents"],["hooks","hooks"],["scripts","scripts"],["skills","skills"],["bin","bin"],["gm.json","gm.json"],["README.md","README.md"],["CLAUDE.md","CLAUDE.md"]];
+  const filesToCopy = [["agents","agents"],["hooks","hooks"],["scripts","scripts"],["skills","skills"],["bin","bin"],["gm.json","gm.json"],["README.md","README.md"],["CLAUDE.md","CLAUDE.md"],["AGENTS.md","AGENTS.md"]];
 
   function copyRecursive(src, dst) {
     if (!fs.existsSync(src)) return;
