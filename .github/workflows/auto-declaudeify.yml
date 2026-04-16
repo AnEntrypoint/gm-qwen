@@ -1,0 +1,37 @@
+name: Auto-Declaudeify
+
+on:
+  push:
+    branches: ['**']
+
+permissions:
+  contents: write
+
+jobs:
+  declaudeify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Check for Claude traces
+        id: check
+        run: |
+          AUTHOR_COMMITS=$(git log --all --author="Claude" --oneline | wc -l)
+          COAUTHOR_COMMITS=$(git log --all --grep="Co-Authored-By.*[Cc]laude" --oneline | wc -l)
+          TOTAL=$((AUTHOR_COMMITS + COAUTHOR_COMMITS))
+          echo "count=$TOTAL" >> $GITHUB_OUTPUT
+          echo "Found $AUTHOR_COMMITS author commits, $COAUTHOR_COMMITS co-author commits"
+
+      - name: Remove Claude from history
+        if: steps.check.outputs.count != '0'
+        run: |
+          npx de-claude clean --remote --all --yes
