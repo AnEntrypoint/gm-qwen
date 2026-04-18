@@ -1,6 +1,6 @@
 {
   "name": "gm",
-  "version": "2.0.518",
+  "version": "2.0.519",
   "description": "State machine agent with hooks, skills, and automated git enforcement",
   "author": "AnEntrypoint",
   "license": "MIT",
@@ -23,5 +23,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "plugkitVersion": "0.1.136"
+  "plugkitVersion": "0.1.137"
 }
