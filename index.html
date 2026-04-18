@@ -18,7 +18,7 @@
 <script type="module">
 import { createElement as h, applyDiff, Fragment } from "webjsx";
 const PLATFORM_NAME="Qwen Code",PLATFORM_TYPE="CLI Tool",PLATFORM_TYPE_COLOR="#3b82f6";
-const DESCRIPTION="State machine agent with hooks, skills, and automated git enforcement",VERSION="2.0.514";
+const DESCRIPTION="State machine agent with hooks, skills, and automated git enforcement",VERSION="2.0.515";
 const GITHUB_URL="https://github.com/AnEntrypoint/gm-qwen",BADGE_LABEL="qwen";
 const FEATURES=[{"title":"State Machine","desc":"Immutable PLAN→EXECUTE→EMIT→VERIFY→COMPLETE phases with full mutable tracking"},{"title":"Semantic Search","desc":"Natural language codebase exploration via codesearch skill — no grep needed"},{"title":"Hooks","desc":"Pre-tool, session-start, prompt-submit, and stop hooks for full lifecycle control"},{"title":"Agents","desc":"gm, codesearch, and websearch agents pre-configured and ready to use"},{"title":"MCP Integration","desc":"Model Context Protocol server support built in"},{"title":"Auto-Recovery","desc":"Supervisor hierarchy ensures the system never crashes"}],INSTALL_STEPS=[{"desc":"Install via npm","cmd":"npm install -g gm-qwen"},{"desc":"Restart Qwen Code — activates automatically"}];
 const CURRENT_PLATFORM="gm-qwen";
@@ -26,6 +26,7 @@ const ALL_PLATFORMS=[
   {id:'gm-cc',label:'Claude Code',type:'cli'},{id:'gm-gc',label:'Gemini CLI',type:'cli'},
   {id:'gm-oc',label:'OpenCode',type:'cli'},{id:'gm-kilo',label:'Kilo Code',type:'cli'},
   {id:'gm-codex',label:'Codex',type:'cli'},{id:'gm-copilot-cli',label:'Copilot CLI',type:'cli'},
+  {id:'gm-qwen',label:'Qwen Code',type:'cli'},{id:'gm-hermes',label:'Hermes Agent',type:'cli'},
   {id:'gm-vscode',label:'VS Code',type:'ide'},{id:'gm-cursor',label:'Cursor',type:'ide'},
   {id:'gm-zed',label:'Zed',type:'ide'},{id:'gm-jetbrains',label:'JetBrains',type:'ide'},
 ];
